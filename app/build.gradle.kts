@@ -1,5 +1,6 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
+//    id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -8,11 +9,11 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.geokrishifarm.geokrishi"
+//        applicationId = "com.geokrishifarm.geokrishi"
         minSdk = 17
         targetSdk = targetSdk
-        versionCode = 1
-        versionName = "1.0"
+//        versionCode = 1
+//        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
