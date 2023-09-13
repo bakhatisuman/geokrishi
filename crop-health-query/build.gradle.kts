@@ -1,10 +1,10 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
-//    id("signing")
+//    id("maven-publish")
 
 }
+
 
 android {
     namespace = "com.geokrishifarm.crop_health_query"
@@ -15,6 +15,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -43,6 +44,8 @@ android {
 
 }
 
+
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
@@ -64,15 +67,15 @@ dependencies {
 }
 
 
-afterEvaluate {
-    publishing {
-        publications {
+group = "com.github.bakhatisuman"
+version = "1.0"
 
-            release(MavenPublication) {
-                groupId = "com.github.bakhatisuman"
-                artifactId = "crop-health_query"
-                version = "1.0"
-            }
-        }
-    }
-}
+apply(from = "${rootProject.projectDir}/scripts/publish-module.gradle")
+
+
+
+
+
+
+
+
